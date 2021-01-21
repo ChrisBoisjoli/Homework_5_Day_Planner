@@ -60,17 +60,17 @@ $(".task-data").each(function(){
     // console.log(currentHour);
 };
 
-var updateTextarea = function(textareaElement){
-    var taskData = textareaElement.closest(".task-data");
-    var textArea = taskData.find("textarea");
+var replaceTextarea = function(textareaElement){
+    var taskInfo = textareaElement.closest(".task-data");
+    var textArea = taskInfo.find("textarea");
 
-    var time = taskData.attr("id");
+    var time = taskInfo.attr("id");
     var text = textArea.val().trim();
 
     tasks[time] = [text];
     setTask();
 
-    createTask(text, taskData);
+    createTask(text, taskInfo);
     console.log(textArea);
 };
 // click functions
@@ -95,7 +95,7 @@ $(".task").click(function(){
 
 // save button
 $(".saveBtn").click(function(){
-    updateTextarea($(this));
+    replaceTextarea($(this));
 });
 timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
 setTimeout(function() {
