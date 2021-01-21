@@ -32,3 +32,8 @@ var retrieveTask = function(){
     }
     verifyTask()
 };
+var buildTask = function(taskText, hourDiv){
+
+    var taskDiv =hourDiv.find(".task");
+    
+};
