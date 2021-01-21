@@ -40,3 +40,29 @@ var buildTask = function(taskText, hourDiv){
     taskDiv.html(taskPar);
 
 };
+// check current tasks in local storage and local time
+var verifyTask = function(){
+
+var currentHour = moment().hour();
+$(".row").each(function(){
+    var rowHour = parseInt($(this).attr("id"));
+
+    if (rowHour < currentHour){
+        $(this).removeClass(["present", "future"]).addClass("past");
+    }
+    else if ( rowHour === currentHour ) {
+        $(this).removeClass(["past", "future"]).addClass("present");
+    }
+    else {
+        $(this).removeClass(["past", "present"]).addClass("future");
+    }
+    })
+};
+
+
+
+
+// save button
+// $(".saveBtn").click(function(){
+//     replaceTextarea($(this));
+// });
