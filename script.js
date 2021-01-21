@@ -22,14 +22,14 @@ var setTask = function(){
 var retrieveTask = function(){
 
     
-    if (savedTasks){
-        tasks = savedTasks
+    if (tasks = setTask){
+        
 
-        $.each(tasks, function(hour,task){
-            var hourDiv = $("#" + hour);
-            $("tasks").append(savedTasks);
+        $.each(tasks, function(){
+            
+            $("tasks").append(setTask);
         })
-        console.log(savedTasks);
+        console.log(setTask);
     }
     verifyTask()
 };
