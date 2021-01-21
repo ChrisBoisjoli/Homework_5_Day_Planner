@@ -61,7 +61,16 @@ $(".task-data").each(function(){
 };
 
 var updateTextarea = function(textareaElement){
+    var taskData = textareaElement.closest(".task-data");
+    var textArea = taskData.find("textarea");
 
+    var time = taskData.attr("id");
+    var text = textArea.val().trim();
+
+    tasks[time] = [text];
+    setTask();
+
+    createTask(text, taskData);
 };
 
 
