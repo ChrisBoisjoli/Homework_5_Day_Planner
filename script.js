@@ -15,9 +15,8 @@ var tasks = {
     "17" : [],
 };
 
-var setTask = function(){
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-};
+var setTask = localStorage.setItem("tasks", JSON.stringify(tasks));
+
 // pull tasks from local
 var retrieveTask = function(){
 console.log(tasks);
@@ -82,28 +81,10 @@ $(".task-data").each(function(){
 // click functions
 // $(".task").on("click", function(){
 
-//     $("textarea").each(function(){
-//         replaceTextarea($(this));
-//     })
-
-//     var time = $(this).closest(".task-data").attr("id");
-//     if (parseInt(time) >= moment().hour()){
-        
-//         var text = $(this).text();
-//         var textInput = $("<textarea>").addClass("form-control").val(text);
-
-//         $(this).html(textInput);
-//         textInput.trigger("focus");
-
-//     }
-// })
-
-
-
-timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
-setTimeout(function() {
-    setInterval(verifyTask, 3600000)
-}, timeToHour);
+// timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
+// setTimeout(function() {
+//     setInterval(verifyTask, 3600000)
+// }, timeToHour);
 
 // get the tasks from localStorage on load.
 retrieveTask();
