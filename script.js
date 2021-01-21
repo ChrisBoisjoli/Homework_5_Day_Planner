@@ -57,7 +57,7 @@ $(".task-data").each(function(){
         $(this).removeClass(["past", "present"]).addClass("future");
     }
     })
-    console.log(currentHour);
+    // console.log(currentHour);
 };
 
 var updateTextarea = function(textareaElement){
@@ -71,6 +71,7 @@ var updateTextarea = function(textareaElement){
     setTask();
 
     createTask(text, taskData);
+    console.log(textArea);
 };
 // click functions
 $(".task").click(function(){
@@ -98,7 +99,7 @@ $(".saveBtn").click(function(){
 });
 timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
 setTimeout(function() {
-    setInterval(auditTasks, 3600000)
+    setInterval(verifyTask, 3600000)
 }, timeToHour);
 
 // get the tasks from localStorage on load.
