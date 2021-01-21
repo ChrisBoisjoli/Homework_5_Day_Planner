@@ -23,7 +23,11 @@ textarea{
 
 .description{
   white-space: pre-wrap;
+  width: 100%;
 }
+form{
+  width: 500px;
+};
 
 .time-block{
   text-align: center;
