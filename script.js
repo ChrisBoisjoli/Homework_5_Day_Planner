@@ -14,15 +14,15 @@ var tasks = {
     "16" : [],
     "17" : [],
 };
+console.log(tasks);
 
-var setTask = function(){};
-
-// localStorage.setItem("tasks", JSON.stringify(tasks));
+var setTask = function(){
+    tasks.push(localStorage);
+};
 
 // pull tasks from local
 var retrieveTask = function(){
-console.log(tasks);
-    
+
     if (tasks = setTask){
         
 
