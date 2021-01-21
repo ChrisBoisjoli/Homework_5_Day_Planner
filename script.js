@@ -44,7 +44,7 @@ var buildTask = function(taskText, hourDiv){
 var verifyTask = function(){
 
 var currentHour = moment().hour();
-$(".row").each(function(){
+$(".task-data").each(function(){
     var rowHour = parseInt($(this).attr("id"));
 
     if (rowHour < currentHour){
@@ -57,12 +57,16 @@ $(".row").each(function(){
         $(this).removeClass(["past", "present"]).addClass("future");
     }
     })
+    console.log(currentHour);
 };
 
+var updateTextarea = function(textareaElement){
+
+};
 
 
 
 // save button
 // $(".saveBtn").click(function(){
-//     replaceTextarea($(this));
+//     updateTextarea($(this));
 // });
