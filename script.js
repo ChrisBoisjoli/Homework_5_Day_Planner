@@ -75,7 +75,7 @@ var replaceTextarea = function(textareaElement){
     console.log(textArea);
 };
 // click functions
-$(".task").click(function(){
+$(".task").on("click", function(){
 
     $("textarea").each(function(){
         replaceTextarea($(this));
@@ -95,7 +95,7 @@ $(".task").click(function(){
 
 
 // save button
-$(".saveBtn").click(function(){
+$(".saveBtn").on("click", function(){
     replaceTextarea($(this));
 });
 timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
