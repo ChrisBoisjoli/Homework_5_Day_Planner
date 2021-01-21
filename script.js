@@ -65,26 +65,6 @@ $(".task-data").each(function(){
     $(".task").text(tasks);
     }); 
    
-    // var replaceTextarea = function(textareaEl){
-    // var taskInfo = setTask.append("#task-form");
-    // var textArea = taskInfo.find("textarea");
-
-    // var time = taskInfo.attr("id");
-    // var text = textArea.val();
-
-    // tasks[time] = [text];
-    // setTask();
-
-    // createTask(text, taskInfo);
-//     console.log(textArea);
-// };
-// click functions
-// $(".task").on("click", function(){
-
-// timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
-// setTimeout(function() {
-//     setInterval(verifyTask, 3600000)
-// }, timeToHour);
-
+  
 // get the tasks from localStorage on load.
 retrieveTask();
