@@ -3,22 +3,34 @@ var today = moment();
 $("#currentDay").text(today.format('MMMM Do YYYY, h:mm:ss a'));
 
 // save tasks object
-var tasks = {
-    "9" : [],
-    "10" : [],
-    "11" : [],
-    "12" : [],
-    "13" : [],
-    "14" : [],
-    "15" : [],
-    "16" : [],
-    "17" : [],
-};
-console.log(tasks);
+
+
 
 var setTask = function(){
-    tasks.push(localStorage);
+    var tasks = {
+        "9" : [],
+        "10" : [],
+        "11" : [],
+        "12" : [],
+        "13" : [],
+        "14" : [],
+        "15" : [],
+        "16" : [],
+        "17" : [],
+    };
+    for (var i = 0; i < tasks.length; i++){
+        var taskText = $(".task-input");
+        taskText.text(tasks[i]);
+    };
+    console.log(tasks);
+
+    $(".task").text(".task-input");
+    
+    // $(".task").append(localStorage);
+
+    
 };
+console.log(setTask);
 
 // pull tasks from local
 var retrieveTask = function(){
@@ -30,10 +42,11 @@ var retrieveTask = function(){
             
             $("tasks").append(localStorage);
         })
-        console.log(setTask);
+        
     }
     verifyTask()
 };
+
 // add row with saved task
 var buildTask = function(){
     $(".task").empty();
