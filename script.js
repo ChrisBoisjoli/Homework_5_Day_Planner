@@ -16,7 +16,7 @@ var tasks = {
 };
 
 var setTask = function(){
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem(tasks, JSON.stringify(tasks));
 };
 // pull tasks from local
 var retrieveTask = function(){
@@ -43,7 +43,7 @@ var buildTask = function(){
 };
 // check current tasks in local storage and local time
 var verifyTask = function(){
-
+// update color by hour
 var currentHour = moment().hour();
 $(".task-data").each(function(){
     var rowHour = parseInt($(this).attr("id"));
@@ -61,42 +61,42 @@ $(".task-data").each(function(){
     
 };
    
-    var replaceTextarea = function(textareaEl){
-    var taskInfo = savedTasks.append("#task-form");
-    var textArea = taskInfo.find("textarea");
+    // var replaceTextarea = function(textareaEl){
+    // var taskInfo = setTask.append("#task-form");
+    // var textArea = taskInfo.find("textarea");
 
-    var time = taskInfo.attr("id");
-    var text = textArea.val();
+    // var time = taskInfo.attr("id");
+    // var text = textArea.val();
 
-    tasks[time] = [text];
-    setTask();
+    // tasks[time] = [text];
+    // setTask();
 
     // createTask(text, taskInfo);
-    console.log(textArea);
-};
+//     console.log(textArea);
+// };
 // click functions
-$(".task").on("click", function(){
+// $(".task").on("click", function(){
 
-    $("textarea").each(function(){
-        replaceTextarea($(this));
-    })
+//     $("textarea").each(function(){
+//         replaceTextarea($(this));
+//     })
 
-    var time = $(this).closest(".task-data").attr("id");
-    if (parseInt(time) >= moment().hour()){
+//     var time = $(this).closest(".task-data").attr("id");
+//     if (parseInt(time) >= moment().hour()){
         
-        var text = $(this).text();
-        var textInput = $("<textarea>").addClass("form-control").val(text);
+//         var text = $(this).text();
+//         var textInput = $("<textarea>").addClass("form-control").val(text);
 
-        $(this).html(textInput);
-        textInput.trigger("focus");
+//         $(this).html(textInput);
+//         textInput.trigger("focus");
 
-    }
-})
+//     }
+// })
 
 
 // save button
 $(".saveBtn").on("click", function(){
-    replaceTextarea($(this));
+    $(".task").text(tasks);
 });
 timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
 setTimeout(function() {
