@@ -36,9 +36,9 @@ console.log(tasks);
 // add row with saved task
 var buildTask = function(){
 
-    var taskDiv =hourDiv.find(".task");
-    var taskPar = $("<p>").addClass("description").text(taskText)
-    taskDiv.html(taskPar);
+    // var taskDiv = hourDiv.find(".task");
+    // var taskPar = $("<p>").addClass("description").text(taskText)
+    // taskDiv.html(taskPar);
 
 };
 // check current tasks in local storage and local time
