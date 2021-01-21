@@ -34,7 +34,7 @@ var retrieveTask = function(){
     verifyTask()
 };
 // add row with saved task
-var buildTask = function(taskText, hourDiv){
+var buildTask = function(){
 
     var taskDiv =hourDiv.find(".task");
     var taskPar = $("<p>").addClass("description").text(taskText)
@@ -58,11 +58,11 @@ $(".task-data").each(function(){
         $(this).removeClass(["past", "present"]).addClass("future");
     }
     })
-    // console.log(currentHour);
+    
 };
-
-var replaceTextarea = function(textareaElement){
-    var taskInfo = textareaElement.closest(".task-data");
+    var textareaEl = "textarea"
+    var replaceTextarea = function(textareaEl){
+    var taskInfo = textareaEl.append(".task-data");
     var textArea = taskInfo.find("textarea");
 
     var time = taskInfo.attr("id");
