@@ -15,7 +15,9 @@ var tasks = {
     "17" : [],
 };
 
-var setTask = localStorage.setItem("tasks", JSON.stringify(tasks));
+var setTask = function(){};
+
+// localStorage.setItem("tasks", JSON.stringify(tasks));
 
 // pull tasks from local
 var retrieveTask = function(){
