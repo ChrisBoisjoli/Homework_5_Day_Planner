@@ -72,7 +72,24 @@ var updateTextarea = function(textareaElement){
 
     createTask(text, taskData);
 };
+// click functions
+$(".task").click(function(){
 
+    $("textarea").each(function(){
+        replaceTextarea($(this));
+    })
+
+    var time = $(this).closest(".task-data").attr("id");
+    if (parseInt(time) >= moment().hour()){
+        
+        var text = $(this).text();
+        var textInput = $("<textarea>").addClass("form-control").val(text);
+
+        $(this).html(textInput);
+        textInput.trigger("focus");
+
+    }
+})
 
 
 // save button
