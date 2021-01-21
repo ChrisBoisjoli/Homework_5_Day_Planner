@@ -18,3 +18,17 @@ var tasks = {
 var setTask = function(){
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
+
+var retrieveTask = function(){
+
+    var savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (savedTasks){
+        tasks = savedTasks
+
+        $.each(tasks, function(hour,task){
+            var hourDiv = $("#" + hour);
+            createTask(task, hourDiv);
+        })
+    }
+    verifyTask()
+};
