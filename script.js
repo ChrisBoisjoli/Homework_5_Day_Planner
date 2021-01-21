@@ -24,7 +24,7 @@ var setTask = function(){
     };
     console.log(tasks);
 
-    $(".task").text(".task-input");
+    $(".task").text(this);
     
     // $(".task").append(localStorage);
 
@@ -46,14 +46,16 @@ var retrieveTask = function(){
     }
     verifyTask()
 };
-
+// save button
+$(".saveBtn").on("click", function(setTask){
+    $(".task").text(tasks);
+    }); 
+    
 // add row with saved task
 var buildTask = function(){
     $(".task").empty();
     $(".task").append(localStorage);
-    // var taskDiv = hourDiv.find(".task");
-    // var taskPar = $("<p>").addClass("description").text(taskText)
-    // taskDiv.html(taskPar);
+    
 
 };
 // check current tasks in local storage and local time
@@ -75,10 +77,7 @@ $(".task-data").each(function(){
     })
     
 };
-// save button
-    $(".saveBtn").on("click", function(setTask){
-    $(".task").text(tasks);
-    }); 
+
    
   
 // get the tasks from localStorage on load.
