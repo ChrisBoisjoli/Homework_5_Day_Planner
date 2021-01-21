@@ -21,7 +21,7 @@ var setTask = function(){
 // pull tasks from local
 var retrieveTask = function(){
 
-    var savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    
     if (savedTasks){
         tasks = savedTasks
 
@@ -60,9 +60,9 @@ $(".task-data").each(function(){
     })
     
 };
-    var textareaEl = "textarea"
+   
     var replaceTextarea = function(textareaEl){
-    var taskInfo = textareaEl.append(".task-data");
+    var taskInfo = savedTasks.append("#task-form");
     var textArea = taskInfo.find("textarea");
 
     var time = taskInfo.attr("id");
