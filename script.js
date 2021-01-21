@@ -35,7 +35,8 @@ console.log(tasks);
 };
 // add row with saved task
 var buildTask = function(){
-
+    $(".task").empty();
+    $(".task").append(localStorage);
     // var taskDiv = hourDiv.find(".task");
     // var taskPar = $("<p>").addClass("description").text(taskText)
     // taskDiv.html(taskPar);
@@ -60,6 +61,10 @@ $(".task-data").each(function(){
     })
     
 };
+// save button
+    $(".saveBtn").on("click", function(setTask){
+    $(".task").text(tasks);
+    }); 
    
     // var replaceTextarea = function(textareaEl){
     // var taskInfo = setTask.append("#task-form");
@@ -94,10 +99,7 @@ $(".task-data").each(function(){
 // })
 
 
-// save button
-$(".saveBtn").on("click", function(){
-    $(".task").text(tasks);
-});
+
 timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
 setTimeout(function() {
     setInterval(verifyTask, 3600000)
