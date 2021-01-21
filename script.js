@@ -27,8 +27,9 @@ var retrieveTask = function(){
 
         $.each(tasks, function(hour,task){
             var hourDiv = $("#" + hour);
-            createTask(task, hourDiv);
+            $("tasks").append(savedTasks);
         })
+        console.log(savedTasks);
     }
     verifyTask()
 };
@@ -65,12 +66,12 @@ var replaceTextarea = function(textareaElement){
     var textArea = taskInfo.find("textarea");
 
     var time = taskInfo.attr("id");
-    var text = textArea.val().trim();
+    var text = textArea.val();
 
     tasks[time] = [text];
     setTask();
 
-    createTask(text, taskInfo);
+    // createTask(text, taskInfo);
     console.log(textArea);
 };
 // click functions
