@@ -16,18 +16,18 @@ var tasks = {
 };
 
 var setTask = function(){
-    localStorage.setItem(tasks, JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 // pull tasks from local
 var retrieveTask = function(){
-
+console.log(tasks);
     
     if (tasks = setTask){
         
 
         $.each(tasks, function(){
             
-            $("tasks").append(setTask);
+            $("tasks").append(localStorage);
         })
         console.log(setTask);
     }
