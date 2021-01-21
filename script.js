@@ -18,7 +18,7 @@ var tasks = {
 var setTask = function(){
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
-
+// pull tasks from local
 var retrieveTask = function(){
 
     var savedTasks = JSON.parse(localStorage.getItem("tasks"));
@@ -32,8 +32,11 @@ var retrieveTask = function(){
     }
     verifyTask()
 };
+// add row with saved task
 var buildTask = function(taskText, hourDiv){
 
     var taskDiv =hourDiv.find(".task");
-    
+    var taskPar = $("<p>").addClass("description").text(taskText)
+    taskDiv.html(taskPar);
+
 };
