@@ -93,6 +93,13 @@ $(".task").click(function(){
 
 
 // save button
-// $(".saveBtn").click(function(){
-//     updateTextarea($(this));
-// });
+$(".saveBtn").click(function(){
+    updateTextarea($(this));
+});
+timeToHour = 3600000 - today.milliseconds();  // check how much time is left until the next hour
+setTimeout(function() {
+    setInterval(auditTasks, 3600000)
+}, timeToHour);
+
+// get the tasks from localStorage on load.
+retrieveTask();
