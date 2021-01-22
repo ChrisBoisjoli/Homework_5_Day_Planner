@@ -23,8 +23,8 @@ var setTask = function(){
         taskText.text(tasks[i]);
     };
     console.log(tasks);
-
-    $(".task").text(this);
+    console.log(".task-input");
+    // $(".task").text(this);
     
     // $(".task").append(localStorage);
 
